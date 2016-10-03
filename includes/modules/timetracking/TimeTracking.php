@@ -23,14 +23,23 @@ class TimeTracking {
     }
     
     public function add_filters() {
+        
         add_filter( 'template_include', array( $this, 'load_template' ) );
+        
     }
     
     public function load_template( $template ) {
         
-        if( is_page() && get_the_ID() == get_option( \OpenErp\Options::$open_erp_timetracker_id, true ) ) :
-            
+        
+        if( is_page() && get_the_ID() == get_option( \OpenErp\Options::$open_erp_timetracker_page_id, true ) ) :
+            $template = OPENERP_TIMETRACKING_PATH . '/templates/app.php';
         endif;
+        
+        if( is_page() && get_the_ID() == get_option( \OpenErp\Options::$open_erp_login_page_id, true ) ) :
+            $template = OPENERP_TIMETRACKING_PATH . '/templates/login.php';
+        endif;
+        
+        return $template;
         
     }
     

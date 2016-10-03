@@ -1,7 +1,9 @@
 {
     "autoload" : {
         "psr-4" : {
-            "OpenErp\\" : "includes/"
+            "OpenErp\\" : "includes/",
+            "OpenErp\\TimeTracking\\" : "includes/modules/timetracking",
+            "OpenErp\\Manufacturing\\" : "includes/modules/manufacturing"
         }
     }
 }

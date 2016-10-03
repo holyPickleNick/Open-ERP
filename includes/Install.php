@@ -21,7 +21,7 @@ class Install {
      * @todo update the open_erp_version option so that the methods within only run on initial activation
      */
     function activate() {
-    
+        
         $current_version = get_option( Options::$version, NULL );
         
         if( is_null( $current_version ) ) :
@@ -49,17 +49,30 @@ class Install {
     
     public function create_pages() {
         
-        $page = array(
-            'timetracker' => array(
-                'post_title' => 'Time Tracker',
+        $pages = array(
+            Options::$open_erp_timetracker_page_id => array(
+                'post_title' => 'ERP Time Tracker',
                 'post_status' => 'publish',
                 'post_type' => 'page'
-            )
+            ),
+            Options::$open_erp_login_page_id => array(
+                'post_title' => 'ERP Login',
+                'post_status' => 'publish',
+                'post_type' => 'page'
+            ),
         );
         
-        $id = wp_insert_post( $page );
-
-        update_option( Options::$open_erp_timetracker_id, $id );
+        foreach( $pages as $page => $args ) :
+            $id = wp_insert_post( $args );
+            update_option( $page, $id );
+        endforeach;
+        
+    }
+    
+    public function remove_pages() {
+        
+        wp_delete_post( Options::$open_erp_login_page_id );
+        wp_delete_post( Options::$open_erp_timetracker_page_id );
         
     }
     

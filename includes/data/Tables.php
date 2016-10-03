@@ -34,6 +34,19 @@ class Tables {
         ) $charset_collate;";
         
         
+        $table_name = $wpdb->prefix . 'openerp_time_log';
+        $tables['attendance'] = "CREATE TABLE $table_name (
+            ID mediumint(9) NOT NULL AUTO_INCREMENT,
+            user_id mediumint(9) NOT NULL,
+            job_id mediumint(9) NULL,
+            process_id mediumint(9) NULL,
+            the_date date NOT NULL,
+            time_start time NOT NULL,
+            UNIQUE KEY ID (ID)
+        ) $charset_collate;";
+        
+        
+        
         foreach ( $tables as $table ) :
             dbDelta( $table );
         endforeach;

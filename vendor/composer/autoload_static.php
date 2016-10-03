@@ -9,11 +9,21 @@ class ComposerStaticInit6276ccd6eff6a4cf61ad2c1c7f6b8fbd
     public static $prefixLengthsPsr4 = array (
         'O' => 
         array (
+            'OpenErp\\TimeTracking\\' => 21,
+            'OpenErp\\Manufacturing\\' => 22,
             'OpenErp\\' => 8,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'OpenErp\\TimeTracking\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/includes/modules/timetracking',
+        ),
+        'OpenErp\\Manufacturing\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/includes/modules/manufacturing',
+        ),
         'OpenErp\\' => 
         array (
             0 => __DIR__ . '/../..' . '/includes',
@@ -21,9 +31,13 @@ class ComposerStaticInit6276ccd6eff6a4cf61ad2c1c7f6b8fbd
     );
 
     public static $classMap = array (
+        'OpenErp\\Abstracts\\User' => __DIR__ . '/../..' . '/includes/abstracts/User.php',
         'OpenErp\\Admin\\Menu' => __DIR__ . '/../..' . '/includes/admin/Menu.php',
+        'OpenErp\\Data\\Tables' => __DIR__ . '/../..' . '/includes/data/Tables.php',
         'OpenErp\\Install' => __DIR__ . '/../..' . '/includes/Install.php',
+        'OpenErp\\Manufacturing\\Manufacturing' => __DIR__ . '/../..' . '/includes/modules/manufacturing/Manufacturing.php',
         'OpenErp\\Options' => __DIR__ . '/../..' . '/includes/Options.php',
+        'OpenErp\\TimeTracking\\TimeTracking' => __DIR__ . '/../..' . '/includes/modules/timetracking/TimeTracking.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

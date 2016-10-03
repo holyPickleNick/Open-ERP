@@ -6,5 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'OpenErp\\TimeTracking\\' => array($baseDir . '/includes/modules/timetracking'),
+    'OpenErp\\Manufacturing\\' => array($baseDir . '/includes/modules/manufacturing'),
     'OpenErp\\' => array($baseDir . '/includes'),
 );

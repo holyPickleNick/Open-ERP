@@ -35,6 +35,7 @@ final class OpenErp{
         $this->define_constants();
         $this->includes();
         $this->initialize();
+        $this->load_modules();
         
     }
     
@@ -55,11 +56,29 @@ final class OpenErp{
     
     private function initialize(){
         
+        // Install the plugin
         new \OpenErp\Install( $this );
+        
+        // Create admin menu
         new \OpenErp\Admin\Menu();
+        
+        // Load tables
         new \OpenErp\Data\Tables();
         
     }
+    
+    private function load_modules() {
+        
+        // Time Tracker
+        new \OpenErp\TimeTracking\TimeTracking();
+        
+        // Manufacturing
+        new \OpenErp\Manufacturing\Manufacturing();
+        
+        
+        
+    }
+    
 }
 
 function open_erp() {
