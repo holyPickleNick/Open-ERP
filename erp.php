@@ -75,7 +75,8 @@ final class OpenErp{
         // Manufacturing
         new \OpenErp\Manufacturing\Manufacturing();
         
-        
+        // Human Resources
+        new \OpenErp\HR\HR();
         
     }
     

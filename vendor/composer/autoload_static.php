@@ -11,6 +11,7 @@ class ComposerStaticInit6276ccd6eff6a4cf61ad2c1c7f6b8fbd
         array (
             'OpenErp\\TimeTracking\\' => 21,
             'OpenErp\\Manufacturing\\' => 22,
+            'OpenErp\\HR\\' => 11,
             'OpenErp\\' => 8,
         ),
     );
@@ -24,6 +25,10 @@ class ComposerStaticInit6276ccd6eff6a4cf61ad2c1c7f6b8fbd
         array (
             0 => __DIR__ . '/../..' . '/includes/modules/manufacturing',
         ),
+        'OpenErp\\HR\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/includes/modules/hr',
+        ),
         'OpenErp\\' => 
         array (
             0 => __DIR__ . '/../..' . '/includes',
@@ -34,6 +39,7 @@ class ComposerStaticInit6276ccd6eff6a4cf61ad2c1c7f6b8fbd
         'OpenErp\\Abstracts\\User' => __DIR__ . '/../..' . '/includes/abstracts/User.php',
         'OpenErp\\Admin\\Menu' => __DIR__ . '/../..' . '/includes/admin/Menu.php',
         'OpenErp\\Data\\Tables' => __DIR__ . '/../..' . '/includes/data/Tables.php',
+        'OpenErp\\HR\\HR' => __DIR__ . '/../..' . '/includes/modules/hr/HR.php',
         'OpenErp\\Install' => __DIR__ . '/../..' . '/includes/Install.php',
         'OpenErp\\Manufacturing\\Manufacturing' => __DIR__ . '/../..' . '/includes/modules/manufacturing/Manufacturing.php',
         'OpenErp\\Options' => __DIR__ . '/../..' . '/includes/Options.php',

@@ -3,7 +3,8 @@
         "psr-4" : {
             "OpenErp\\" : "includes/",
             "OpenErp\\TimeTracking\\" : "includes/modules/timetracking",
-            "OpenErp\\Manufacturing\\" : "includes/modules/manufacturing"
+            "OpenErp\\Manufacturing\\" : "includes/modules/manufacturing",
+            "OpenErp\\HR\\" : "includes/modules/hr"
         }
     }
 }

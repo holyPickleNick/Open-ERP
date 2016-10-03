@@ -30,9 +30,14 @@ class Manufacturing {
     
     public function add_menu() {
         
-        add_menu_page( 'Manufacturing', 'Manufacturing', 'manage_options', 'manufacturing', function() {
+        add_menu_page( 'Manufacturing', 'Manufacturing', 'manage_erp', 'manufacturing', function() {
             
         }, 'dashicons-admin-tools');
+        
+        add_submenu_page( 'manufacturing', 'Items', 'Items', 'manage_erp', 'erp-items', function(){} );
+        add_submenu_page( 'manufacturing', 'Jobs', 'Jobs', 'manage_erp', 'erp-jobs', function(){} );
+        add_submenu_page( 'manufacturing', 'BOM', 'BOM', 'manage_erp', 'erp-bom', function(){} );
+        add_submenu_page( 'manufacturing', 'Inventory', 'Inventory', 'manage_erp', 'erp-inventory', function(){} );
         
     }
     

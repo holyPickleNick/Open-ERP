@@ -9,6 +9,7 @@ return array(
     'OpenErp\\Abstracts\\User' => $baseDir . '/includes/abstracts/User.php',
     'OpenErp\\Admin\\Menu' => $baseDir . '/includes/admin/Menu.php',
     'OpenErp\\Data\\Tables' => $baseDir . '/includes/data/Tables.php',
+    'OpenErp\\HR\\HR' => $baseDir . '/includes/modules/hr/HR.php',
     'OpenErp\\Install' => $baseDir . '/includes/Install.php',
     'OpenErp\\Manufacturing\\Manufacturing' => $baseDir . '/includes/modules/manufacturing/Manufacturing.php',
     'OpenErp\\Options' => $baseDir . '/includes/Options.php',

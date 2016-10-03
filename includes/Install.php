@@ -32,12 +32,19 @@ class Install {
             $this->create_pages();
             
             $current_version = $this->OpenErp->version;
-                    
+            update_option( Options::$version, $current_version );
+            
         endif;
         
     }
     
     function deactivate() {
+        
+        $this->remove_pages();
+        delete_option( Options::$version );
+        
+        remove_role( 'erp_admin' );
+        remove_role( 'erp_user' );
         
     }
     
@@ -71,15 +78,17 @@ class Install {
     
     public function remove_pages() {
         
-        wp_delete_post( Options::$open_erp_login_page_id );
-        wp_delete_post( Options::$open_erp_timetracker_page_id );
+        wp_delete_post( get_option( Options::$open_erp_login_page_id ) );
+        wp_delete_post( get_option( Options::$open_erp_timetracker_page_id ) );
         
     }
     
     
     function create_roles(){
-        add_role( 'erp_admin', 'ERP Admin' );
-        add_role( 'erp_admin', 'ERP User' );
+        
+        add_role( 'erp_admin', 'ERP Admin', array('read' => true) );
+        add_role( 'erp_user', 'ERP User', array('read' => true) );
+        
     }
     
     function setup_cron() {
