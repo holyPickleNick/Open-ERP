@@ -1,0 +1,22 @@
+
+/* ## navbar */
+
+body{
+    background-color: #f1f2f6;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: none;
+    border-radius: 0;
+    background-color: rgba(255,255,255,.9);
+    width: 100%;
+    z-index: 2000;
+}
+
+#app-body{
+    position: relative;
+    top: 50px;
+}

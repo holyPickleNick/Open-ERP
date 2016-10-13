@@ -35,23 +35,11 @@ class ComposerStaticInit6276ccd6eff6a4cf61ad2c1c7f6b8fbd
         ),
     );
 
-    public static $classMap = array (
-        'OpenErp\\Abstracts\\User' => __DIR__ . '/../..' . '/includes/abstracts/User.php',
-        'OpenErp\\Admin\\Menu' => __DIR__ . '/../..' . '/includes/admin/Menu.php',
-        'OpenErp\\Data\\Tables' => __DIR__ . '/../..' . '/includes/data/Tables.php',
-        'OpenErp\\HR\\HR' => __DIR__ . '/../..' . '/includes/modules/hr/HR.php',
-        'OpenErp\\Install' => __DIR__ . '/../..' . '/includes/Install.php',
-        'OpenErp\\Manufacturing\\Manufacturing' => __DIR__ . '/../..' . '/includes/modules/manufacturing/Manufacturing.php',
-        'OpenErp\\Options' => __DIR__ . '/../..' . '/includes/Options.php',
-        'OpenErp\\TimeTracking\\TimeTracking' => __DIR__ . '/../..' . '/includes/modules/timetracking/TimeTracking.php',
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit6276ccd6eff6a4cf61ad2c1c7f6b8fbd::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit6276ccd6eff6a4cf61ad2c1c7f6b8fbd::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit6276ccd6eff6a4cf61ad2c1c7f6b8fbd::$classMap;
 
         }, null, ClassLoader::class);
     }

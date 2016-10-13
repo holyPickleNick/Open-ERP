@@ -13,7 +13,7 @@ if( !defined( 'ABSPATH' ) ) {
 
 final class OpenErp{
     
-    public $version = '1.0.0';
+    public static $version = '1.0.0';
     
     public static $instance;
     
@@ -45,6 +45,7 @@ final class OpenErp{
         ! defined( 'OPENERP_URL') ? define( 'OPENERP_URL', plugin_dir_url( __FILE__ ) ) : null;
         ! defined( 'OPENERP_FILE') ? define( 'OPENERP_FILE', __FILE__ ) : null;
         ! defined( 'OPENERP_INCLUDES') ? define( 'OPENERP_INCLUDES', OPENERP_PATH . '/includes' ) : null;
+        ! defined( 'OPENERP_DOMAIN') ? define( 'OPENERP_DOMAIN', 'open-erp' ) : null;
     
     }
     

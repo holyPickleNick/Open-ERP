@@ -15,10 +15,13 @@ class TimeTracking {
         
         ! defined( 'OPENERP_TIMETRACKING_PATH') ? define( 'OPENERP_TIMETRACKING_PATH', dirname(__FILE__) ) : null;
         ! defined( 'OPENERP_TIMETRACKING_URL') ? define( 'OPENERP_TIMETRACKING_URL', plugins_url( '', __FILE__ ) ) : null;
+        ! defined( 'OPENERP_TT_SLUG') ? define( 'OPENERP_TT_SLUG', 'open-erp-tt' ) : null;
         
     }
     
     public function add_hooks() {
+        
+        add_action( 'wp_enqueue_scripts', array( $this, 'load_styles_scripts' ) );
         
     }
     
@@ -40,6 +43,13 @@ class TimeTracking {
         endif;
         
         return $template;
+        
+    }
+    
+    public function load_styles_scripts(){
+        
+        wp_enqueue_style( OPENERP_TT_SLUG . 'style', OPENERP_TIMETRACKING_URL . '/includes/styles/main.css', array(), \OpenErp::$version );
+        
         
     }
     
