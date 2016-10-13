@@ -1,5 +1,5 @@
 <?php
-namespace OpenErp\Objects;
+namespace OpenErp\Utils;
 
 /**
  * 

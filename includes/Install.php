@@ -57,12 +57,12 @@ class Install {
     public function create_pages() {
         
         $pages = array(
-            Options::$open_erp_timetracker_page_id => array(
+            Options::$timetracker_page_id => array(
                 'post_title' => 'ERP Time Tracker',
                 'post_status' => 'publish',
                 'post_type' => 'page'
             ),
-            Options::$open_erp_login_page_id => array(
+            Options::$login_page_id => array(
                 'post_title' => 'ERP Login',
                 'post_status' => 'publish',
                 'post_type' => 'page'
@@ -78,8 +78,8 @@ class Install {
     
     public function remove_pages() {
         
-        wp_delete_post( get_option( Options::$open_erp_login_page_id ) );
-        wp_delete_post( get_option( Options::$open_erp_timetracker_page_id ) );
+        wp_delete_post( get_option( Options::$login_page_id ) );
+        wp_delete_post( get_option( Options::$timetracker_page_id ) );
         
     }
     

@@ -35,7 +35,7 @@ class Tables {
         
         
         $table_name = $wpdb->prefix . 'openerp_time_log';
-        $tables['attendance'] = "CREATE TABLE $table_name (
+        $tables['time_log'] = "CREATE TABLE $table_name (
             ID mediumint(9) NOT NULL AUTO_INCREMENT,
             user_id mediumint(9) NOT NULL,
             job_id mediumint(9) NULL,
