@@ -36,7 +36,7 @@ class User extends \WP_User {
      */
     public function __get( $key ) {
         
-        $value = get_user_meta( $this->ID, $key, TRUE );
+        $value = get_user_meta( $this->ID, '_' . $key, TRUE );
         
         return $value;
         
