@@ -24,13 +24,29 @@ jQuery(document).ready( function($) {
             }
             
             $.post( ajax_url, data, function( response) {
-                alert( response )
+                swal({
+                    title : response.message
+                }, function() {
+                    location.reload();
+                });
             });
             
         },
         
         clockOut: function() {
             
+            var data = {
+                action : 'open_erp_tt_clock_out'
+            }
+
+            $.post( ajax_url, data, function( response) {
+                swal({
+                    title : response.message
+                }, function() {
+                    location.reload();
+                });
+            });
+
         },
         
         lunchIn: function() {

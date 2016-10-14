@@ -25,11 +25,11 @@ class Tables {
         $tables['attendance'] = "CREATE TABLE $table_name (
             ID mediumint(9) NOT NULL AUTO_INCREMENT,
             user_id mediumint(9) NOT NULL,
-            the_date date NOT NULL,
-            time_in time NOT NULL,
-            time_out time NOT NULL,
-            lunch_in time NOT NULL,
-            lunch_out time NOT NULL,
+            the_date date NULL,
+            time_in time NULL,
+            time_out time NULL,
+            lunch_in time NULL,
+            lunch_out time NULL,
             UNIQUE KEY ID (ID)
         ) $charset_collate;";
         

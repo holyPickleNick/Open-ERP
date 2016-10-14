@@ -22,7 +22,11 @@ $attendance = new Attendance( $user->data->ID );
     
     <div class="row">
         
-        <?php if( ! $attendance->is_working() ) : ?>
+        <?php if( $attendance->is_done_work() ) : ?>
+        
+        <h4>Shift completed!</h4>
+        
+        <?php elseif( ! $attendance->is_working() ) : ?>
         
             <div class="col-md-3 col-sm-6">
                 <button class="btn btn-default btn-block clock-in">
@@ -35,7 +39,7 @@ $attendance = new Attendance( $user->data->ID );
         
         
             <div class="col-md-3 col-sm-6">
-                <button class="btn btn-default btn-block">
+                <button class="btn btn-default btn-block clock-out">
                     <span class="glyphicon glyphicon-log-out"></span>
                     <h4><?php _e( 'Clock out', OPENERP_DOMAIN ); ?></h4>
                 </button>            
@@ -43,7 +47,7 @@ $attendance = new Attendance( $user->data->ID );
         
         
 
-            <?php if( ! $attendance->is_on_lunch() ) : ?>
+            <?php if( ! $attendance->has_taken_lunch() ) : ?>
 
             <div class="col-md-3 col-sm-6">
                 <button class="btn btn-default btn-block">
