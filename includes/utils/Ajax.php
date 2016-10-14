@@ -4,8 +4,6 @@ namespace OpenErp\Utils;
 
 trait Ajax {
     
-    
-    
     public function verify_nonce( $action ) {
         
         if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], $action ) ) :

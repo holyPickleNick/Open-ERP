@@ -50,7 +50,7 @@ $attendance = new Attendance( $user->data->ID );
             <?php if( ! $attendance->has_taken_lunch() ) : ?>
 
             <div class="col-md-3 col-sm-6">
-                <button class="btn btn-default btn-block">
+                <button class="btn btn-default btn-block lunch-in">
                     <span class="glyphicon glyphicon-time"></span>
                     <h4><?php _e( 'Start lunch', OPENERP_DOMAIN ); ?></h4>
                 </button>            
@@ -62,7 +62,7 @@ $attendance = new Attendance( $user->data->ID );
             <?php if( $attendance->is_on_lunch() ) : ?>
 
             <div class="col-md-3 col-sm-6">
-                <button class="btn btn-default btn-block">
+                <button class="btn btn-default btn-block lunch-out">
                     <span class="glyphicon glyphicon-time"></span>
                     <h4><?php _e( 'End lunch', OPENERP_DOMAIN ); ?></h4>
                 </button>            

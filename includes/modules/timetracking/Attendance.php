@@ -98,7 +98,7 @@ class Attendance {
     
     public function has_taken_lunch() {
         
-        if( $this->lunch_in && $this->lunch_out ) :
+        if( ! $this->lunch_in && ! $this->lunch_out ) :
             return true;
         endif;
         
@@ -108,6 +108,33 @@ class Attendance {
 
 
     public function lunch_in(){
+        
+        if( ! $this->has_taken_lunch() ) :
+            
+            global $wpdb;
+        
+            $query = $wpdb->update( $wpdb->prefix . 'openerp_attendance',
+                array(
+                    'lunch_in'   => current_time( 'H:i:s')
+                ),
+                array(
+                    'user_id'   => $this->user_id,
+                    'the_date'  => current_time( 'Y-m-d' ),
+                ),
+                array(
+                    '%s',
+                ),
+                array(
+                    '%d',
+                    '%s',
+                )
+            );            
+            
+            return true;
+            
+        endif;
+        
+        return false;
         
     }
     
@@ -134,7 +161,11 @@ class Attendance {
                 )
             );
             
+            return true;
+            
         endif;
+        
+        return false;
         
     }
     

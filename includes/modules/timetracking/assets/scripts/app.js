@@ -51,9 +51,39 @@ jQuery(document).ready( function($) {
         
         lunchIn: function() {
             
+            var data = {
+                action : 'open_erp_tt_lunch_in'
+            }
+
+            $.post( ajax_url, data, function( response) {
+                swal({
+                    title : response.message
+                }, function() {
+                    location.reload();
+                });
+            });            
+            
         },
         
         lunchOut: function() {
+            
+            var data = {
+                action : 'open_erp_tt_lunch_out'
+            }
+
+            $.post( ajax_url, data, function( response) {
+                swal({
+                    title : response.message
+                }, function() {
+                    location.reload();
+                });
+            });            
+            
+        },
+        
+        doAjax : function( $data ) {
+            
+            
             
         }
         
