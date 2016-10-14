@@ -23,13 +23,7 @@ jQuery(document).ready( function($) {
                 action : 'open_erp_tt_clock_in'
             }
             
-            $.post( ajax_url, data, function( response) {
-                swal({
-                    title : response.message
-                }, function() {
-                    location.reload();
-                });
-            });
+            this.doAjax( data );
             
         },
         
@@ -39,13 +33,7 @@ jQuery(document).ready( function($) {
                 action : 'open_erp_tt_clock_out'
             }
 
-            $.post( ajax_url, data, function( response) {
-                swal({
-                    title : response.message
-                }, function() {
-                    location.reload();
-                });
-            });
+            this.doAjax( data );
 
         },
         
@@ -55,13 +43,7 @@ jQuery(document).ready( function($) {
                 action : 'open_erp_tt_lunch_in'
             }
 
-            $.post( ajax_url, data, function( response) {
-                swal({
-                    title : response.message
-                }, function() {
-                    location.reload();
-                });
-            });            
+            this.doAjax( data );           
             
         },
         
@@ -71,19 +53,19 @@ jQuery(document).ready( function($) {
                 action : 'open_erp_tt_lunch_out'
             }
 
+            this.doAjax( data );
+            
+        },
+        
+        doAjax : function( data ) {
+            
             $.post( ajax_url, data, function( response) {
                 swal({
                     title : response.message
                 }, function() {
                     location.reload();
                 });
-            });            
-            
-        },
-        
-        doAjax : function( $data ) {
-            
-            
+            });   
             
         }
         
